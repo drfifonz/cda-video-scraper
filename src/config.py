@@ -3,7 +3,6 @@ PAGE_SEARCH_URL = "https://www.cda.pl/video/show/"
 PAGE_SEARCH_P = "p"
 PAGE_SEARCH_SORT_TYPE = "?s=best"
 
-
 FIREFOX_DRIVER_PATH = "resources/geckodriver-v0.31.0-linux64/geckodriver"
 FIREFOX_TO_DEV_NULL = "/dev/null"
 
@@ -28,3 +27,9 @@ LINK_CLASS_TAG = "video-clip-link autoHide"
 TITLE_SEARCH_TAG = "h1"
 LINK_SEARCH_TAG = "video"
 LINK_ATTRIBUTE = "src"
+
+# utils
+REQ_SEARCH_URL = "cda.pl/info/"
+REQ_SINGLE_VIDEO = "cda.pl/video/"
+INPUT_MESSAGE = "Put videos numbers seperated by space only:"
+INCORECT_INPUT_MESSAGE = "Incorect input."

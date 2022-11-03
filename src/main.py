@@ -18,4 +18,4 @@ def argument_parser():
 
 if __name__ == "__main__":
     parser = argument_parser()
-    args = parser.parse_args
+    opts = parser.parse_args
