@@ -1,3 +1,5 @@
+DONWLOAD_PATH = "downloads"
+
 PAGE_URL = "https://www.cda.pl/"
 PAGE_SEARCH_URL = "https://www.cda.pl/video/show/"
 PAGE_SEARCH_P = "p"

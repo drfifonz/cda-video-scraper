@@ -89,27 +89,29 @@ class Scraper:
 
     def get_direct_video_url(self, url: str) -> list[str, str]:
         """
-        Gets download link from video url.
+        Gets download link from video url.\n
         Return list of title & direct link to mp4 file.
         """
 
-        with webdriver.Firefox(service=self.driver_service) as driver:
-            driver.minimize_window()
-            driver.get(url)
+        driver = webdriver.Firefox(service=self.driver_service)
+        driver.minimize_window()
+        driver.get(url)
 
-            title = driver.find_element(By.TAG_NAME, cfg.TITLE_SEARCH_TAG).text
-            link = driver.find_element(By.TAG_NAME, cfg.LINK_SEARCH_TAG).get_attribute(cfg.LINK_ATTRIBUTE)
-            return [title, link]
+        title = driver.find_element(By.TAG_NAME, cfg.TITLE_SEARCH_TAG).text
+        link = driver.find_element(By.TAG_NAME, cfg.LINK_SEARCH_TAG).get_attribute(cfg.LINK_ATTRIBUTE)
+        driver.close()
+
+        return [title, link]
 
     def download_video(self, video_url: str, video_name: str, path: str) -> None:
         if not os.path.exists(path):
             os.mkdir(path)
 
         file_path = os.path.join(path, f"{video_name}.mp4")
-        print(file_path)
+        # print(file_path)
         try:
             response = requests.get(video_url, self._get_random_header())
             with open(file_path, "xb") as file:
                 file.write(response.content)
         except:
-            print(f"{video_name} already exists.")
+            print(f"{file_path} already exists.", end="")
