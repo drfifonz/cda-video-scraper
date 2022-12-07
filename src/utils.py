@@ -1,9 +1,14 @@
-import config as cfg
-import time
 import os
+import time
+
+import config as cfg
 
 
 class Validator:
+    """
+    Validates correctness of given url
+    """
+
     def __init__(self) -> None:
         pass
 
@@ -75,11 +80,11 @@ def get_videos_by_list(videos: dict, user_list: list) -> list[str]:
 
     videos_list = []
 
-    for id in user_list:
+    for user_id in user_list:
         # print("id: ", id)
         # print(videos[keys_names[2]][id - 1])
         # # return videos[keys_names[2]][id - 1]
-        videos_list.append(videos[keys_names[2]][id - 1])
+        videos_list.append(videos[keys_names[2]][user_id - 1])
     return videos_list
 
 

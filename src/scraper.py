@@ -1,6 +1,6 @@
 import json
 import os
-import re
+
 import time
 from random import choice
 
@@ -17,6 +17,10 @@ import config as cfg
 
 
 class Scraper:
+    """
+    Scrapping class, containing static and dynamic scrapper with firefox drivers.
+    """
+
     def __init__(self) -> None:
         self.driver_service = Service(executable_path=cfg.FIREFOX_DRIVER_PATH, log_path=cfg.FIREFOX_TO_DEV_NULL)
 
@@ -104,6 +108,9 @@ class Scraper:
         return [title, link]
 
     def download_video(self, video_url: str, video_name: str, path: str) -> None:
+        """
+        downloads videos
+        """
         if not os.path.exists(path):
             os.mkdir(path)
 

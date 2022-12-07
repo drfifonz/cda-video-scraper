@@ -1,12 +1,13 @@
+# SET BELOW PARAMETRS BEFORE FIRST RUN
 DONWLOAD_PATH = "downloads"
+FIREFOX_DRIVER_PATH = ""
+FIREFOX_TO_DEV_NULL = "/dev/null"
 
 PAGE_URL = "https://www.cda.pl/"
 PAGE_SEARCH_URL = "https://www.cda.pl/video/show/"
 PAGE_SEARCH_P = "p"
 PAGE_SEARCH_SORT_TYPE = "?s=best"
 
-FIREFOX_DRIVER_PATH = "resources/geckodriver-v0.31.0-linux64/geckodriver"
-FIREFOX_TO_DEV_NULL = "/dev/null"
 
 HEADERS_PATH = "data/headers.json"
 HEADERS_SECTION = "headers"

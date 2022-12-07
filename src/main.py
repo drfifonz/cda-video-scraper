@@ -1,23 +1,25 @@
 import argparse
-import os
 import time
 
 import config as cfg
 from scraper import Scraper
-from utils import *
+from utils import Validator, print_videos_dict, get_user_videos_selection_list, get_videos_by_list
 
 
 def argument_parser():
-    parser = argparse.ArgumentParser(description="cda.pl videos downloader")
+    """
+    Argument parser, returns parsed arguments.
+    """
+    arg_parser = argparse.ArgumentParser(description="cda.pl videos downloader")
 
-    parser.add_argument(
+    arg_parser.add_argument(
         "qoute", type=str, default=None, nargs="?", help="single video link / search video link / qoute to search video"
     )
-    parser.add_argument(
-        "-p", "--pages", type=int, default=1, nargs="?", help="number of scraping pages for search qoute"
+    arg_parser.add_argument(
+        "-p", "--pages", type=int, default=1, nargs="?", help="[OPTIONAL] number of scraping pages for search qoute"
     )
 
-    return parser.parse_args()
+    return arg_parser.parse_args()
 
 
 if __name__ == "__main__":
