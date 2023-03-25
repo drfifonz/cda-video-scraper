@@ -10,7 +10,7 @@ About
 
 Basic video downloader from cda.pl video steam service. 
 
-Project base on static and dynamic scrapping concept. Webpage is parsed with BeautifulSoup Python module, executing necessary javascript is provided by Selenium.
+The project is based on static and dynamic scrapping concept. CDA webpage is parsed with BeautifulSoup Python module, executing necessary javascript is provided by Selenium.
 
 It is possible to download multiple videos by passing search quote as parameter. User can select which video want to download from displayed list. 
 
@@ -18,16 +18,16 @@ It is possible to download multiple videos by passing search quote as parameter.
 
 Before first run
 ----
-Fristly specify constant variables at [config.py](src/config.py) like:
+Fristly specify constant variables in [config.py](src/config.py):
 
-- DOWNLOAD_PATH
-- FIREFOX_DRIVER_PATH
-- FIREFOX_TO_DEV_NULL
+- DOWNLOAD_PATH  - path where downloaded videos would be saved
+- FIREFOX_DRIVER_PATH - path to firefox browser engine
+- FIREFOX_TO_DEV_NULL - tmp directory for saving logs required to run script, files can be removed after execution 
   </br>
 
 
-
-You can download firefox GeckoDriver [here](https://github.com/mozilla/geckodriver/releases).
+Project use selenium, which requires to specify brower engine.For proper runnig it is necessary to usue __Firefox GeckoDriver__ .</br>
+You can download it [here](https://github.com/mozilla/geckodriver/releases).
 
 How to run
 ----
